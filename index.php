@@ -44,13 +44,19 @@ $total = $quantity * $price;
         <button type="submit">Sign Up</button>
 
     </form> -->
-
+    <!-- find the price of pizza with quantity entered in the form and display the total -->
     <!-- <form action="index.php" method="post">
         <label for="Pizza">Pizza Quantity</label>
         <input type="number" name="pizza">
         <input type="submit" value="Submit">
     </form> -->
+    <!-- for radius of circle -->
+    <!-- <form action="index.php" method="post">
+        <label for="Radius">Enter the radius of the circle</label>
+        <input type="number" name="radius">
+        <input type="submit" value="Submit">
 
+    </form> -->
 </body>
 
 </html>
@@ -68,4 +74,32 @@ $total = $quantity * $price;
 // echo "You have ordered $pizzaQantity pizza";
 // echo "<br>";
 // echo "Your total is RS $pizzaQantity * $price = {$total}";
+// $radius = $_POST["radius"];
+// $area = pi() * $radius * $radius;
+// echo "The area of the circle is $area";
+// echo "<br>";
+// $circumference = 2 * pi() * $radius;
+// echo "<br>";
+// echo "The circumference of the circle is $circumference";
+// $volume = 4 / 3 * pi() * $radius * $radius * $radius;
+// echo "<br>";
+// echo "The volume of the circle is $volume";
+// 
+// Magic Constants
+// echo __DIR__;
+// echo "<br>";
+// echo __FILE__;
+// echo "<br>";
+// echo __LINE__;
+// echo "<br>";
+// echo __FUNCTION__;
+// echo "<br>";
+// echo __CLASS__;
+// echo "<br>";
+// echo __METHOD__;
+// echo "<br>";
+// echo __NAMESPACE__;
+// echo "<br>";
+// echo __TRAIT__;
+// echo "<br>";
 ?>
