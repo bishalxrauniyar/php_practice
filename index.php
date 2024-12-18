@@ -8,7 +8,14 @@
 // $quantity = 2;
 // $price = 30.5;
 // $total = $quantity * $price;
+// cookies
+// setcookie("name", "Bishal Rauniyar", time() + 86400);
+// setcookie("age", 21, time() + 86400);
+// setcookie("gpa", 3.5, time() + 86400);
 
+// foreach ($_COOKIE as $key => $value) {
+//     echo "{$key}={$value} <br>";
+// }
 ?>
 
 <!DOCTYPE html>
@@ -146,5 +153,94 @@
 //         echo "Welcome $email";
 //     }
 // }
+// The array() function is used to create an array.
+$fruits = array("apple", "banana", "cherry");
 
-?>
+echo "Fruits: ";
+
+foreach ($fruits as $fruit) {
+
+    echo $fruit . " ";
+}
+
+echo "<br>";
+
+//array_combine 
+$keys = array("a", "b", "c");
+$values = array("appple", "banana", "cherry");
+
+$combined = array_combine($keys, $values);
+echo "Combined Array: <br>";
+foreach ($combined as $key => $value) {
+    echo "[$key=>$value] <br>";
+}
+//output
+//Combined Array:
+// [a=>appple]
+// [b=>banana]
+// [c=>cherry]
+
+
+//array_chunk
+$numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+$chunked = array_chunk($numbers, 2);
+echo "Chunked Array: <br>";
+foreach ($chunked as $chunk) {
+    echo "[" . implode(",", $chunk) . "]<br>";
+}
+//output
+//Chunked Array:
+// [1,2]
+// [3,4]
+// [5,6]
+// [7,8]
+// [9,10]
+
+
+//compact() function
+
+$name = "Bishal";
+$age = 21;
+$info = compact("name", "age");
+echo "compact array : <br>";
+foreach ($info as $key => $value) {
+    echo "[$key=>$value]";
+}
+//output
+//[name=>Bishal][age=>21]
+
+
+// range() generates an array containing a start and an end value, with optional step increments.
+
+$even_numbers = range(2, 10, 2);
+echo " <br> Even numbers : <br>";
+foreach ($even_numbers as $number) {
+    echo  "$number, ";
+}
+echo "<br>";
+
+
+//"list() function"
+$info = array("Bishal", "Rauniyar", 21);
+list($firstname, $lastname, $age) = $info;
+echo "Firstname: $firstname \n";
+echo "Lastname:$lastname \n";
+echo "Age:$age \n";
+echo "<br>";
+
+// output
+//Firstname: Bishal Lastname:Rauniyar Age:21
+
+
+//array_fill() creates an array with a specified number of elements, each having the same value.
+
+$filledArray = array_fill(0, 5, "Bishal");
+echo "Filled Array :";
+foreach ($filledArray as $fa) {
+    echo $fa . '';
+}
+// output
+//Filled Array :BishalBishalBishalBishalBishal
+
+
+//array_fill_keys() creates an array using specified keys and the same value for each key.
