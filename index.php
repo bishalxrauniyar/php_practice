@@ -59,10 +59,22 @@
     </form> -->
 
     <!-- // Associative Array -->
-    <form action=index.php method="post">
+    <!-- <form action=index.php method="post">
         <input type="text" name="country" placeholder="Enter the country">
         <button type="submit">Submit</button>
         <br>
+    </form> -->
+    <!-- isset() and empty () -->
+
+
+    <!-- <h2> Login form </h2>
+    <form action="index.php" method="post">
+        <input type="email" name="email" placeholder="Enter your email"><br>
+        <input type="password" name="password" placeholder="Enter your password"><br>
+        <button type="submit" value="signin" name="signin">Sign In</button>
+    </form> -->
+
+
 </body>
 
 </html>
@@ -109,12 +121,30 @@
 // echo __TRAIT__;
 // echo "<br>";
 
-$capitals = array(
-    "Nepal" => "Kathmandu",
-    "India" => "New Delhi",
-    "China" => "Beijing"
-);
+// $capitals = array(
+//     "Nepal" => "Kathmandu",
+//     "India" => "New Delhi",
+//     "China" => "Beijing",
+//     "USA" => "Washington D.C.",
+//     "UK" => "London"
+// );
 
-$country = $_POST["country"];
-echo "The capital of $country is $capitals[$country]";
+// $country = $_POST["country"];
+// echo "The capital of $country is $capitals[$country]";
+// 
+
+
+// isset() and empty()
+// if (isset($_POST["signin"])) {
+//     $email = $_POST["email"];
+//     $password = $_POST["password"];
+//     if (empty($email)) {
+//         echo "Email is empty";
+//     } else if (empty($password)) {
+//         echo "Password is empty";
+//     } else {
+//         echo "Welcome $email";
+//     }
+// }
+
 ?>
