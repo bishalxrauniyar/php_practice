@@ -239,8 +239,32 @@ echo "Filled Array :";
 foreach ($filledArray as $fa) {
     echo $fa . '';
 }
+echo "<br>";
 // output
 //Filled Array :BishalBishalBishalBishalBishal
 
 
 //array_fill_keys() creates an array using specified keys and the same value for each key.
+$keys = array("a", "b", "c");
+
+$filledArray = array_fill_keys($keys, "hello");
+
+echo "Filled Array with Keys: ";
+
+foreach ($filledArray as $key => $value) {
+
+    echo "[$key => $value] ";
+}
+echo "<br>";
+//output 
+//Filled Array with Keys: [a => hello] [b => hello] [c => hello]
+
+//array_flip() flips the keys and values of an array, creating a new array where the original values become keys, and the original keys become values.
+$fruits = array("apple", "banana", "cheery");
+$filledArray = array_flip($fruits);
+echo "Flipped array:";
+foreach ($filledArray as $key => $value) {
+    echo "[$key=>$value]";
+}
+//output
+//Flipped array:[apple=>0][banana=>1][cheery=>2]
