@@ -1,13 +1,13 @@
 <?php
-echo "Hello World! Bishal Rauniyar <br>";
-$name = "Bishal Rauniyar";
-$age = 21;
-$gpa = 3.5;
-$isMale = true;
-$food = "pizza";
-$quantity = 2;
-$price = 30.5;
-$total = $quantity * $price;
+// echo "Hello World! Bishal Rauniyar <br>";
+// $name = "Bishal Rauniyar";
+// $age = 21;
+// $gpa = 3.5;
+// $isMale = true;
+// $food = "pizza";
+// $quantity = 2;
+// $price = 30.5;
+// $total = $quantity * $price;
 
 ?>
 
@@ -57,6 +57,12 @@ $total = $quantity * $price;
         <input type="submit" value="Submit">
 
     </form> -->
+
+    <!-- // Associative Array -->
+    <form action=index.php method="post">
+        <input type="text" name="country" placeholder="Enter the country">
+        <button type="submit">Submit</button>
+        <br>
 </body>
 
 </html>
@@ -102,4 +108,13 @@ $total = $quantity * $price;
 // echo "<br>";
 // echo __TRAIT__;
 // echo "<br>";
+
+$capitals = array(
+    "Nepal" => "Kathmandu",
+    "India" => "New Delhi",
+    "China" => "Beijing"
+);
+
+$country = $_POST["country"];
+echo "The capital of $country is $capitals[$country]";
 ?>
