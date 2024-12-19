@@ -72,7 +72,6 @@ array_diff_key():
 Compares arrays by keys and returns differing keys.
 array_intersect():
 Finds common elements across arrays.
-
 array_slice():
 Extracts a portion of an array.
 array_key_exists():
