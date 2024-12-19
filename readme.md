@@ -62,3 +62,27 @@ Practical implementations of $\_POST and $\_GET superglobals for handling form d
 Distinction between POST and GET methods, with security considerations and real-world examples
 
 GitHub repo link: github.com/bishalxrauniyar/php_practice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+I hope this message finds you well. I am writing to request leave from 23rd December to 27th December to attend an educational tour organized by my college. This tour is an important part of my academic curriculum and will offer me valuable learning opportunities.
+
+I will ensure that any tasks or responsibilities assigned to me are completed before my leave. If there are any urgent requirements during my absence, I am happy to assist remotely as needed.
+
+I kindly request you to approve my leave for the mentioned dates.
+
+Thank you for your understanding.
+
+*/

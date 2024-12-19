@@ -336,3 +336,118 @@ foreach ($array_intersect as $key => $value) {
     echo "[$key => $value]";
 }
 echo "<br>";
+
+
+//output
+// Key value intersect : [b=>2] 
+
+
+//array_intersect_assoc() computes the intersection of arrays with an additional index check, comparing both values and keys.
+
+
+$a = array("a" => 1, "b" => 2, "c" => 3);
+$b = array("a" => 3, "b" => 2, "c" => 1);
+$array_intersect_assoc = array_intersect_assoc($a, $b);
+echo "Array Intersect Asso :";
+foreach ($array_intersect_assoc as $key => $value) {
+    echo "[$key=>$value]";
+}
+echo "<br>";
+//output
+//Array Intersect Asso :[b=>2]
+
+//array_intersect_key() computes the intersection of arrays using keys for comparison and returns an array containing values from the first array that have matching keys in the other arrays.
+
+
+$a = array("a" => 1, "b" => 2, "c" => 3);
+$b = array("z" => 3, "b" => 2, "c" => 1);
+$array_intersect_key = array_intersect_key($a, $b);
+echo "Array Intersect Key :";
+foreach ($array_intersect_key as $key => $value) {
+    echo "[$key=>$value]";
+}
+echo "<br>";
+//output
+//Array Intesect Key : [b=>2][c=>3]
+
+
+//array_key_exists() checks if a specified key exists and returns true if the key is found, and false otherwise.
+
+$person = array("name" => "Bishal", "age" => 21, "location" => "kalimati");
+$key_exits = array_key_exists("name", $person);
+echo "The key name Exits: " . ($key_exits ? "YES" : "NO");
+echo "<br>";
+//ourput
+//The key name Exits : YES
+
+
+
+//The in_array() function checks if a specified value exists in an array. It returns true if the value is found, and false if otherwise.
+
+$fruits = array("apple", "banana", "cherry", "date");
+$in_array = in_array("banana", $fruits);
+echo "banana in array :";
+if ($in_array == 0) {
+    echo " NO0";
+} else {
+    echo " YES";
+}
+echo "<br>";
+
+// array_search() looks for a value in an array and returns the corresponding key if the value is found. If the value is not found, it returns false.
+
+$fruits = array("apple", "banana", "cherry", "date");
+$key_search = array_search("date", $fruits);
+echo "date found at key : " . ($key_search);
+echo "<br>";
+
+//The array_count_values() function counts the frequency of values in an array and returns an associative array where the keys are the unique values from the input array.
+$a = array(1, 2, 2, 3, 6, 5, 5, 4, 1, 2, 5, 2, 5, 1);
+$count = array_count_values($a);
+echo "Counted Values are: ";
+foreach ($count as $value => $count) {
+    echo "$value:$count ,";
+}
+echo "<br>";
+
+
+//The array_merge() function merges two or more arrays into a single array.
+
+$a = array(1, 2, 3, 3, 2, 1);
+$b = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$c = array_merge($a, $b);
+echo "Merged Array";
+foreach ($c as $item) {
+    echo "$item" . ' ';
+}
+echo "<br>";
+//output 
+//Merged Array1 2 3 3 2 1 1 2 3 4 5 6 7 8 9
+
+
+//array_merge_recursive() is used to merge multidimensional arrays.
+$a = array("a" => "apple", "b" => "ball");
+$b = array("c" => "cat", "d" => "dog");
+$c = array_merge_recursive($a, $b);
+echo "Merged Recursive ";
+foreach ($c as $key => $value) {
+    echo "$key => $value" . " ";
+}
+echo "<br>";
+//output
+//Merged Recursive a => apple b => ball c => cat d => dog
+
+
+
+//array_replace() replaces the values of the first array with the values from the second array for matching keys.
+$a = array("a" => "apple", "b" => "ball");
+$b = array("b" => "banana", "d" => "dog");
+$c = array_replace($a, $b);
+echo "Array Replaced ";
+foreach ($c as $key => $value) {
+    echo "$key => $value" . " ";
+}
+echo "<br>";
+//output
+
+//Array Replaced a => apple b => banana d => dog
