@@ -451,3 +451,177 @@ echo "<br>";
 //output
 
 //Array Replaced a => apple b => banana d => dog
+
+
+//array_reduce() reduces an array to a single value using a callback function.
+
+
+$numbers = array(1, 2, 3, 4, 5);
+
+$sum = array_reduce($numbers, function ($carry, $item) {
+
+    return $carry + $item;
+});
+
+echo "Sum of Numbers: " . $sum;
+
+// output
+// Sum of Numbers: 15
+
+echo "<br>";
+
+
+//The array_pop() function removes and returns the last element from an array.
+
+$a = array(1, 2, 3, 4);
+$lastelement = array_pop($a);
+echo "last element is : " . ($lastelement);
+
+
+
+// output
+// last element is : 4 
+echo "<br>";
+
+
+//The array_shift() function removes and returns the first element from an array.
+$a = array(1, 2, 3, 4);
+$firstelement = array_shift($a);
+echo "the first element is : " . ($firstelement);
+echo "<br>";
+
+//output
+// the first element is : 1
+
+
+// array_unshift() adds one or more elements to the beginning of an array.
+
+$a = array(1, 2, 3, 4);
+array_unshift($a, "0", "5");
+echo " the new array is: ";
+foreach ($a as $item) {
+    echo $item . " ";
+}
+echo "<br>";
+//output
+//the new array is: 0 5 1 2 3 4
+
+
+// arsort() sorts an associative array in descending order, preserving key-value associations.
+
+$fruits = array("banana" => 5, "cherry" => 11, "apple" => 30);
+arsort($fruits);
+
+echo "Sorted Array (Reverse): ";
+
+foreach ($fruits as $key => $value) {
+
+    echo "[$key => $value] ";
+}
+echo "<br>";
+//output
+//Sorted Array (Reverse): [apple => 30] [cherry => 11] [banana => 5]
+
+// asort() sorts an associative array in accending order, preserving key-value associations.
+
+$fruits = array("banana" => 5, "cherry" => 11, "apple" => 30);
+asort($fruits);
+
+echo "Sorted Array (accending): ";
+
+foreach ($fruits as $key => $value) {
+
+    echo "[$key => $value] ";
+}
+echo "<br>";
+//output
+//Sorted Array (accending): [banana => 5] [cherry => 11] [apple => 30]
+
+
+//rsort() sorts an indexed array in descending order.
+
+$num = array(1, 2, 3, 5, 6, 8);
+rsort($num);
+echo "Reverced Sorted Numbers :";
+foreach ($num as $nu) {
+    echo $nu . " ";
+}
+echo "<br>";
+//output
+//Reverced Sorted Numbers :8 6 5 3 2 1
+
+
+//usort() sorts an indexed array using a user-defined comparison function.
+$numbers = array(5, 3, 1, 4, 2);
+
+usort($numbers, function ($a, $b) {
+
+    return $a % $b;
+});
+
+echo "Sorted Numbers (User-Defined): ";
+
+foreach ($numbers as $number) {
+
+    echo $number . " ";
+}
+echo "<br>";
+//output
+//Sorted Numbers (User-Defined): 4 2 3 5 1
+
+
+
+//array_multisort() performs a multi-dimensional sorting of an array.
+$names = array("bishal", "gokarna", "rohan");
+$ages = array(21, 20, 21);
+array_multisort($names, $ages);
+echo "Sorted Names: ";
+foreach ($names as $name) {
+    echo $name . " ";
+}
+
+echo "<br>";
+
+echo "Sorted Ages: ";
+foreach ($ages as $age) {
+    echo $age . " ";
+}
+
+//output
+//Sorted Names: bishal gokarna rohan
+// Sorted Ages: 21 20 21
+echo "<br>";
+
+
+
+// shuffle() randomly shuffles the elements of an array.
+
+$cards = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+shuffle($cards);
+echo "Suffeled Cards :";
+foreach ($cards as $card) {
+    echo $card . " ";
+}
+
+//output
+//Suffeled Cards: 9 5 1 2 8 7 6 3 4
+echo "<br>";
+
+
+//natsort()
+// This function sorts an array using a "natural order" algorithm, which is useful for sorting arrays with numbers.
+
+
+$fruits = array("apple1", "apple5", "apple0");
+
+natsort($fruits);
+
+echo "Naturally Sorted Fruits: ";
+
+foreach ($fruits as $fruit) {
+
+    echo $fruit . " ";
+}
+//output
+// Naturally Sorted Fruits: apple0 apple1 apple5
+echo "<br>";
