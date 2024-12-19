@@ -266,5 +266,20 @@ echo "Flipped array:";
 foreach ($filledArray as $key => $value) {
     echo "[$key=>$value]";
 }
+echo "<br>";
 //output
 //Flipped array:[apple=>0][banana=>1][cheery=>2]
+
+
+//array_slice() extracts a portion of an array based on a starting index and length, creating a new array containing the selected elements.
+
+
+$fruits = array("apple", "banana", "cherry", "date", "fig");
+$slice = array_slice($fruits, 1, 3);
+echo "Sliced array : ";
+foreach ($slice as $slic) {
+    echo $slic . " ";
+}
+echo "<br>";
+//output
+// Sliced array : banana cheery date
