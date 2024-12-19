@@ -283,3 +283,56 @@ foreach ($slice as $slic) {
 echo "<br>";
 //output
 // Sliced array : banana cheery date
+
+
+//array_diff() calculates the difference between two or more arrays and returns an array containing the values that are present in the first array but not in the other arrays.
+
+$a = array("a", "b", "c");
+$b = array("b", "c", "d");
+$differrences = array_diff($a, $b);
+echo "Difference are/is :";
+foreach ($differrences as $differrence) {
+    echo $differrence . " ";
+}
+
+echo "<br>";
+//array_diff_key() computes the difference of arrays using keys for comparison and returns an array containing values from the first array whose keys are not present in the other arrays.
+$a = array("a" => 1, "b" => 2, "c" => 3);
+$b = array("b" => 2, "c" => 3, "c" => 4);
+$array_diff_key = array_diff_key($a, $b);
+echo "Key value difference :";
+foreach ($array_diff_key as $key => $value) {
+    echo "[$key => $value]";
+}
+echo "<br>";
+//output
+//Key value difference :[a => 1]
+
+//array_diff_assoc() computes the difference of arrays with an additional index check.
+//Basically complement of difference of the array provided.
+
+
+$a = array("a" => 1, "b" => 2, "c" => 3);
+$b = array("b" => 2, "c" => 3, "c" => 4);
+$array_diff_assoc = array_diff_assoc($a, $b);
+echo "Key value difference Complement:";
+foreach ($array_diff_assoc as $key => $value) {
+    echo "[$key => $value]";
+}
+echo "<br>";
+
+//output 
+//Key value difference Complement:[a => 1][c => 3]
+
+
+
+//The array_intersect() function calculates the intersection of two or more arrays and returns an array containing values that are present in all input arrays.
+
+$a = array("a" => 1, "b" => 2, "c" => 3);
+$b = array("b" => 2, "c" => 3, "c" => 4);
+$array_intersect = array_intersect($a, $b);
+echo "Key value intersect :";
+foreach ($array_intersect as $key => $value) {
+    echo "[$key => $value]";
+}
+echo "<br>";
