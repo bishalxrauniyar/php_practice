@@ -18,8 +18,10 @@ Form Handling:
 
 Ability to process and validate user input from HTML forms using $\_GET and $\_POST superglobals.
 Basic Error Handling:
-
-// 12/18/24
+//
+//
+//
+12/18/24
 
 Today covered topics :
 
