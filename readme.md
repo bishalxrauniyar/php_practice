@@ -68,23 +68,44 @@ GitHub repo link: github.com/bishalxrauniyar/php_practice
 
 array_diff():
 Returns elements in the first array not found in others.
-array_diff_key(): Compares arrays by keys and returns differing keys.
-array_intersect(): Finds common elements across arrays.
-array_slice(): Extracts a portion of an array.
-array_key_exists(): Checks if a specific key exists in an array.
-in_array(): Checks if a value exists in an array.
-array_search(): Finds a value and returns its key.
-array_count_values(): Counts values and returns a frequency array.
-array_merge(): Combines arrays into one.
-array_merge_recursive(): Merges arrays recursively.
-array_replace(): Replaces elements of the first array with others.
-array_reduce(): Reduces an array to a single value using a callback.
-array_pop(): Removes the last element of an array.
-array_shift(): Removes the first element of an array.
-array_unshift(): Adds elements to the start of an array.
-arsort(): Sorts an array by values in descending order.
-rsort(): Sorts an array in reverse order.
-usort(): Sorts an array with a custom function.
-array_multisort(): Sorts multiple arrays simultaneously.
-shuffle(): Randomizes array elements.
-natsort(): Sorts an array using natural ordering.
+array_diff_key():
+Compares arrays by keys and returns differing keys.
+array_intersect():
+Finds common elements across arrays.
+
+array_slice():
+Extracts a portion of an array.
+array_key_exists():
+Checks if a specific key exists in an array.
+in_array():
+Checks if a value exists in an array.
+array_search():
+Finds a value and returns its key.
+array_count_values():
+Counts values and returns a frequency array.
+array_merge():
+Combines arrays into one.
+array_merge_recursive():
+Merges arrays recursively.
+array_replace():
+Replaces elements of the first array with others.
+array_reduce():
+Reduces an array to a single value using a callback.
+array_pop():
+Removes the last element of an array.
+array_shift():
+Removes the first element of an array.
+array_unshift():
+Adds elements to the start of an array.
+arsort():
+Sorts an array by values in descending order.
+rsort():
+Sorts an array in reverse order.
+usort():
+Sorts an array with a custom function.
+array_multisort():
+Sorts multiple arrays simultaneously.
+shuffle():
+Randomizes array elements.
+natsort():
+Sorts an array using natural ordering.
