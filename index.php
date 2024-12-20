@@ -751,9 +751,9 @@ echo "<br>";
 //output( bishal and Bishal are  not same)
 //Unique element in the array are: bishal ajay madhav Bishal
 
+
+
 //array_walk() applies a user-defined callback function to each element of an array.
-
-
 $fruits = array("apple", "banana", "cherry");
 
 array_walk($fruits, function (&$value) {
@@ -769,7 +769,7 @@ foreach ($fruits as $fruit) {
 }
 
 echo "<br>";
-//uppercase
+//uppercase output
 //Modified Fruits: APPLE BANANA CHERRY
 
 $fruits = array("Apple", "Banana", "Cherry");
@@ -786,15 +786,15 @@ foreach ($fruits as $fruit) {
     echo $fruit . " ";
 }
 echo "<br>";
-//lowercase
+//lowercase output
 // Modified Fruits: apple banana cherry
+
+
 
 
 // Array Calculations & Returns
 // 44. array_keys()
 // array_keys() returns all the keys or a subset of keys from an associative array.
-
-
 $a = array("Apple" => 1, "Ball" => 2, "CaT" => 3);
 $b = array_keys($a);
 echo "keys of the element in the array are: ";
@@ -804,9 +804,9 @@ foreach ($b as $key) {
 echo "<br>";
 
 
+
 //array_column()
 // array_column() extracts the values from a single column of a multi-dimensional array and returns an array containing those values.
-
 $people = array(
     array("name" => "Bishal", "age" => 21, "location" => "kathmand"),
     array("name" => "Bisha", "age" => 22, "location" => "kathman"),
@@ -845,3 +845,93 @@ foreach ($locations as $location) {
 }
 
 echo "<br>";
+//Output
+//The names are :
+// Bishal
+// Bisha
+// Bish
+// Bis
+// Bi
+// B
+
+// The ages are :
+// 21
+// 22
+// 23
+// 24
+// 25
+// 26
+
+// The locations are :
+// kathmand
+// kathman
+// kathma
+// kathm
+// kath
+// kat
+
+
+
+//array_rand() returns one or more random keys from an array.
+$fruits = array("apple", "banana", "cherry", "date", "fig");
+$randomKey = array_rand($fruits);
+echo "Random Key: " . $randomKey . " " . $fruits[$randomKey];
+echo "<br>";
+
+// Output 
+//Random key with the value
+
+
+//array_product()
+// This function calculates the product of all the values in an array.
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$b = array_product($a);
+echo "The product of the given array is : ";
+echo $b;
+echo "<br>";
+// output
+//The product of the given array is : 362880
+
+
+//array_sum() calculates the sum of all the values in an array.
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$b = array_sum($a);
+echo "The sum of the given array is : ";
+echo $b;
+echo "<br>";
+// output
+// The sum of the given array is : 45
+
+
+//"count() returns the number of elements in an array."
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$b = count($a);
+echo "The number of elements in the given array is : ";
+echo $b;
+echo "<br>";
+//output
+//The number of elements in the given array is : 9
+
+
+//"current() returns the current element's value in an array." 
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$b = current($a);
+echo "The current elements in the given array is : ";
+echo $b;
+echo "<br>";
+//output
+// The current elements in the given array is : 1
+
+
+//"key() returns the current element's key in an array."
+$a = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+$b = key($a);
+echo "The current element's key in the given array is : ";
+echo $b;
+echo "<br>";
+//output
+// The current element's key in the given array is : 0
+
+
+//extract()
+// The extract function imports variables into the current symbol table from an associative array, using the array keys as variable names and values as variable values.
