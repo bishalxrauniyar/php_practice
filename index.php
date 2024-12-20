@@ -625,3 +625,23 @@ foreach ($fruits as $fruit) {
 //output
 // Naturally Sorted Fruits: apple0 apple1 apple5
 echo "<br>";
+
+
+//array_filter() filters the elements of an array using a callback function and returns a new array containing only the elements that pass the callback's test.
+
+$numbers = array(1, 2, 3, 4, 5);
+
+$filtered = array_filter($numbers, function ($n) {
+
+    return $n % 2 == 0; // Filter even numbers.
+
+});
+
+echo "Filtered Numbers (Even): ";
+
+foreach ($filtered as $number) {
+
+    echo $number . " ";
+}
+//output 
+//Filtered Numbers (Even): 2 4
