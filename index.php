@@ -623,10 +623,12 @@ foreach ($fruits as $fruit) {
     echo $fruit . " ";
 }
 //output
+//If the input is apple010 ,apple5 apple2
+// the output will be apple010,apple2,apple5 that is because the natsort() function will only chek the 1st element of the n
 // Naturally Sorted Fruits: apple0 apple1 apple5
 echo "<br>";
 
-
+//12/20/2024
 //array_filter() filters the elements of an array using a callback function and returns a new array containing only the elements that pass the callback's test.
 
 $numbers = array(1, 2, 3, 4, 5);
@@ -643,5 +645,18 @@ foreach ($filtered as $number) {
 
     echo $number . " ";
 }
+echo "<br>";
 //output 
 //Filtered Numbers (Even): 2 4
+
+
+//"array_pad() pads an array to a specified length with a specified value."
+$number = array(1, 2, 3);
+$padded = array_pad($number, 5, 0);
+echo "Padded Array :";
+foreach ($padded as $num) {
+    echo $num . " ";
+}
+echo "<br>";
+//  output
+// Padded Array : 1 2 3 0 0
