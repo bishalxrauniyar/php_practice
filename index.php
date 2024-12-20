@@ -663,3 +663,128 @@ echo "<br>";
 
 
 // array_map() applies a callback function to each element of an array and returns a new array containing the results of the callback function for each element.
+$a = array(1, 2, 3, 4);
+$square = array_map(
+    function ($n) {
+        return $n *  $n;
+    },
+    $a
+);
+echo "The square of each element :";
+foreach ($square as $sqr) {
+    echo $sqr . " ";
+}
+echo "<br>";
+// output : 
+// The square of each element : 1 4 9 16
+
+
+
+//array_change_key_case()
+// This function changes the case of keys in an array to either lowercase or uppercase.
+//for lower case CASE_UPPER
+$a = array("Apple" => 1, "Ball" => 2, "CaT" => 3);
+$lowercase = array_change_key_case($a, CASE_LOWER);
+echo "The Lower case keys changes are as follows";
+foreach ($lowercase as $key => $value) {
+    echo "[$key=>$value]" . " ";
+}
+echo "<br>";
+
+// for lower case CASE_UPPER
+$a = array("Apple" => 1, "Ball" => 2, "CaT" => 3);
+$uppercase = array_change_key_case($a, CASE_UPPER);
+echo "The Upper case keys changes are as follows";
+foreach ($uppercase as $key => $value) {
+    echo "[$key=>$value]" . " ";
+}
+echo "<br>";
+
+
+//Output : 
+// The Lower case keys changes are as follows[apple=>1] [ball=>2] [cat=>3]
+// The Upper case keys changes are as follows[APPLE=>1] [BALL=>2] [CAT=>3]
+
+
+//"array_reverse()The reverse array function reverses the order of elements in an array."
+
+$normal = array("Bishal", "Ajay", "Madhav");
+$reversed = array_reverse($normal);
+echo "Reveresed  Array : ";
+foreach ($reversed as $rev) {
+    echo "$rev" . " ";
+}
+echo "<br>";
+// Output 
+// Reveresed Array : Madhav Ajay Bishal
+
+
+//array_splice()
+// array_splice() removes a portion of an array and replaces it with new elements. 
+// It can also return the removed elements as a new array.
+$developers = array("bishal", "arpan", "gokarna", "saugat");
+$added_developers = array_splice($developers, 2, 2, array("nabin", "rohan"));
+// $added_developers = $developers;
+echo "Replacing the elements at index 2 : ";
+foreach ($developers  as $ad) {
+    echo "$ad" . " ";
+}
+echo "<br>";
+//Replacing the elements at index 2 : bishal arpan nabin rohan
+//REMOVING elements
+echo "Removed the elements at index 2 : ";
+foreach ($added_developers  as $ad) {
+    echo "$ad" . " ";
+}
+echo "<br>";
+//Removing the elements at index 2 : gokarna saugat
+
+
+//"array_unique() removes duplicate values from an array and returns a new array with only the unique values.
+$a = array("bishal", "ajay", "madhav", "bishal", "Bishal");
+$b = array_unique($a);
+echo "Unique element in the array are: ";
+foreach ($b as $newb) {
+    echo "$newb" . " ";
+}
+echo "<br>";
+//output( bishal and Bishal are  not same)
+//Unique element in the array are: bishal ajay madhav Bishal
+
+//array_walk() applies a user-defined callback function to each element of an array.
+
+
+$fruits = array("apple", "banana", "cherry");
+
+array_walk($fruits, function (&$value) {
+
+    $value = strtoupper($value);
+});
+
+echo "Modified Fruits: ";
+
+foreach ($fruits as $fruit) {
+
+    echo $fruit . " ";
+}
+
+echo "<br>";
+//uppercase
+//Modified Fruits: APPLE BANANA CHERRY
+
+$fruits = array("Apple", "Banana", "Cherry");
+
+array_walk($fruits, function (&$value) {
+
+    $value = strtolower($value);
+});
+
+echo "Modified Fruits: ";
+
+foreach ($fruits as $fruit) {
+
+    echo $fruit . " ";
+}
+echo "<br>";
+//lowercase
+// Modified Fruits: apple banana cherry
