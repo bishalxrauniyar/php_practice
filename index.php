@@ -660,3 +660,6 @@ foreach ($padded as $num) {
 echo "<br>";
 //  output
 // Padded Array : 1 2 3 0 0
+
+
+// array_map() applies a callback function to each element of an array and returns a new array containing the results of the callback function for each element.
