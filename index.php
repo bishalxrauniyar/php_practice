@@ -788,3 +788,60 @@ foreach ($fruits as $fruit) {
 echo "<br>";
 //lowercase
 // Modified Fruits: apple banana cherry
+
+
+// Array Calculations & Returns
+// 44. array_keys()
+// array_keys() returns all the keys or a subset of keys from an associative array.
+
+
+$a = array("Apple" => 1, "Ball" => 2, "CaT" => 3);
+$b = array_keys($a);
+echo "keys of the element in the array are: ";
+foreach ($b as $key) {
+    echo "[$key]" . " ";
+}
+echo "<br>";
+
+
+//array_column()
+// array_column() extracts the values from a single column of a multi-dimensional array and returns an array containing those values.
+
+$people = array(
+    array("name" => "Bishal", "age" => 21, "location" => "kathmand"),
+    array("name" => "Bisha", "age" => 22, "location" => "kathman"),
+    array("name" => "Bish", "age" => 23, "location" => "kathma"),
+    array("name" => "Bis", "age" => 24, "location" => "kathm"),
+    array("name" => "Bi", "age" => 25, "location" => "kath"),
+    array("name" => "B", "age" => 26, "location" => "kat")
+);
+
+$names = array_column($people, "name");
+$ages = array_column($people, "age");
+$locations = array_column($people, "location");
+echo "The names are :";
+echo "<br>";
+foreach ($names as $name) {
+    echo $name . " ";
+    echo "<br>";
+}
+
+echo "<br>";
+
+echo "The ages are :";
+echo "<br>";
+foreach ($ages as $age) {
+    echo $age . " ";
+    echo "<br>";
+}
+
+echo "<br>";
+
+echo "The locations are :";
+echo "<br>";
+foreach ($locations as $location) {
+    echo $location . " ";
+    echo "<br>";
+}
+
+echo "<br>";
