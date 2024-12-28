@@ -935,3 +935,4 @@ echo "<br>";
 
 //extract()
 // The extract function imports variables into the current symbol table from an associative array, using the array keys as variable names and values as variable values.
+a$=array()
