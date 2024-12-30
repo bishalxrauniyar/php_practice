@@ -935,4 +935,8 @@ echo "<br>";
 
 //extract()
 // The extract function imports variables into the current symbol table from an associative array, using the array keys as variable names and values as variable values.
-a$=array()
+$person = array("name" => "John", "age" => 30);
+
+extract($person);
+
+echo "Name: " . $name . ", Age: " . $age;
