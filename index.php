@@ -939,4 +939,145 @@ $person = array("name" => "John", "age" => 30);
 
 extract($person);
 
-echo "Name: " . $name . ", Age: " . $age;
+echo "Name: " . $name . ", Age: " . $age . "<br>";
+
+
+//next()
+//This function advances the internal pointer of an array to the next element and returns that element's value.
+
+$a = array("bishal", "kumar", "rauniyar");
+$b = next($a);
+echo "$b";
+echo "<br>";
+
+//prev() moves the internal pointer of an array to the previous element and returns that element's value.
+
+$fruits = array("apple", "banana", "cherry");
+
+end($fruits); //pushing the internal pointer to the last element of the array
+
+$prevFruit = prev($fruits);
+
+echo "Previous Fruit: " . $prevFruit;
+echo "<br>";
+
+
+// end() moves the internal pointer of an array to the last element and returns that element's value.
+
+$fruits = array("apple", "banana", "cherry");
+
+$lastFruit = end($fruits);
+
+echo "Last Fruit: " . $lastFruit;
+echo "<br>";
+
+// Output:
+// Last Fruit: cherry
+
+// reset() moves the internal pointer of an array to the first element and returns that element's value.
+$fruits = array("apple", "banana", "cherry");
+$firstFruit = reset($fruits);
+
+echo "First Fruit: " . $firstFruit;
+echo "<br>";
+
+// Output:
+// First Fruit: apple
+
+
+//each() returns the current key-value pair from an array and advances the internal pointer to the next element. Note: This function has been removed in PHP versions 7.2 and later – try using foreach instead.
+
+// $fruits = array("apple", "banana", "cherry");
+
+// $pair = each($fruits);
+
+// echo "Key: " . $pair['key'] . ", Value: " . $pair['value'];
+// echo "<br>";
+
+//file() reads an entire file into an array, with each line of the file as an element in the array.
+$lines = file("example.txt");
+
+foreach ($lines as $line) {
+
+    echo $line . "\n";
+}
+echo "<br>";
+// output
+// bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar bishal rauniyar
+
+//SORT_ASC
+// This constant specifies ascending order.
+$a = array(1, 6, 3, 4, 5);
+sort($a, SORT_ASC);
+foreach ($a as $b) {
+    echo "$b";
+}
+echo "<br>";
+
+
+//SORT_DESC
+// This constant specifies descending order.
+$a = array(1, 6, 3, 4, 5);
+rsort($a, SORT_DESC);
+foreach ($a as $b) {
+    echo "$b";
+}
+echo "<br>";
+
+
+//SORT_NUMERIC
+// This constant indicates that elements should be treated as numeric values when sorting. It ensures that the values are compared numerically rather than as strings.
+
+$a = array("1", "4", "2", "9");
+sort($a, SORT_NUMERIC);
+foreach ($a as $b) {
+    echo "$b";
+}
+echo "<br>";
+
+
+//SORT_REGULAR
+// This constant indicates that elements should be compared in their original data types without any special treatment as numbers or strings.
+
+$a = array("1", "4", "2", "9", 3);
+sort($a, SORT_NUMERIC);
+foreach ($a as $b) {
+    echo "$b";
+}
+echo "<br>";
+
+
+//CASE_LOWER
+// This constant specifies that keys should be converted to lowercase.
+$fruits = array("Apple" => "Red", "Banana" => "yellow");
+
+$lowercaseKeys = array_change_key_case($fruits, CASE_LOWER);
+
+foreach ($lowercaseKeys as $key => $value) {
+
+    echo "Key: " . $key . ", Value: " . $value . "\n";
+}
+echo "<br>";
+
+//OUTPUT
+// Key: apple, Value: Red Key: banana, Value: yellow
+
+
+
+//CASE_UPPER
+// This constant specifies that keys should be converted to uppercase.
+$fruits = array("Apple" => "Red", "Banana" => "yellow");
+
+$lowercaseKeys = array_change_key_case($fruits, CASE_UPPER);
+
+foreach ($lowercaseKeys as $key => $value) {
+
+    echo "Key: " . $key . ", Value: " . $value . "\n";
+}
+echo "<br>";
+
+//output
+//Key: APPLE, Value: Red Key: BANANA, Value: yellow
+
+
+//completed the practice of php here
