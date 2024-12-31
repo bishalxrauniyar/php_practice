@@ -107,105 +107,110 @@ Plugins: Installed Elementor and Starter Templates plugins for easy site setup.
 Starter Templates: Provides a library of ready-made templates and access to Pixabay images.
 Site Creation: Built a WordPress site using a theme, customized with Elementor, and added content with plugins.
 
-
-
-
-1.
-extract()
-Imports variables into the current symbol table.
-Uses array keys as variable names and values as the variable values.
-$person = array("name" => "John", "age" => 30);
+1.  extract()
+    Imports variables into the current symbol table.
+    Uses array keys as variable names and values as the variable values.
+    $person = array("name" => "John", "age" => 30);
 extract($person);
-echo "Name: " . $name . ", Age: " . $age;
-2.
-next()
-Advances the internal pointer of an array to the next element.
-Returns the value of the next element.
-$a = array("bishal", "kumar", "rauniyar");
+    echo "Name: " . $name . ", Age: " . $age;
+2.  next()
+    Advances the internal pointer of an array to the next element.
+    Returns the value of the next element.
+    $a = array("bishal", "kumar", "rauniyar");
 $b = next($a);
-echo $b;
-3.
-prev()
-Moves the internal pointer to the previous element of the array.
-Returns the previous element’s value.
-$fruits = array("apple", "banana", "cherry");
+    echo $b;
+3.  prev()
+    Moves the internal pointer to the previous element of the array.
+    Returns the previous element’s value.
+    $fruits = array("apple", "banana", "cherry");
 end($fruits); // Move to the last element
-$prevFruit = prev($fruits);
-echo "Previous Fruit: " . $prevFruit;
-4.
-end()
-Moves the internal pointer to the last element of an array.
-Returns the last element’s value.
-$fruits = array("apple", "banana", "cherry");
+    $prevFruit = prev($fruits);
+    echo "Previous Fruit: " . $prevFruit;
+4.  end()
+    Moves the internal pointer to the last element of an array.
+    Returns the last element’s value.
+    $fruits = array("apple", "banana", "cherry");
 $lastFruit = end($fruits);
-echo "Last Fruit: " . $lastFruit;
-5.
-reset()
-Resets the internal pointer to the first element of an array.
-Returns the first element’s value.
-$fruits = array("apple", "banana", "cherry");
+    echo "Last Fruit: " . $lastFruit;
+5.  reset()
+    Resets the internal pointer to the first element of an array.
+    Returns the first element’s value.
+    $fruits = array("apple", "banana", "cherry");
 $firstFruit = reset($fruits);
-echo "First Fruit: " . $firstFruit;
-6.
-each()
-(deprecated in PHP 7.2 and later)
-Returns the current key-value pair and moves the internal pointer to the next element.
-$fruits = array("apple", "banana", "cherry");
+    echo "First Fruit: " . $firstFruit;
+6.  each()
+    (deprecated in PHP 7.2 and later)
+    Returns the current key-value pair and moves the internal pointer to the next element.
+    $fruits = array("apple", "banana", "cherry");
 $pair = each($fruits);
-echo "Key: " . $pair['key'] . ", Value: " . $pair['value'];
-7.
-file()
-Reads an entire file into an array, each line being an element.
-$lines = file("example.txt");
+    echo "Key: " . $pair['key'] . ", Value: " . $pair['value'];
+7.  file()
+    Reads an entire file into an array, each line being an element.
+    $lines = file("example.txt");
 foreach ($lines as $line) {
-echo $line . "\n";
-}
-8.
-SORT_ASC
-Sorts an array in ascending order.
-$a = array(1, 6, 3, 4, 5);
+    echo $line . "\n";
+    }
+8.  SORT_ASC
+    Sorts an array in ascending order.
+    $a = array(1, 6, 3, 4, 5);
 sort($a, SORT_ASC);
-foreach ($a as $b) {
+    foreach ($a as $b) {
 echo "$b";
-}
-9.
-SORT_DESC
-Sorts an array in descending order.
-$a = array(1, 6, 3, 4, 5);
+    }
+9.  SORT_DESC
+    Sorts an array in descending order.
+    $a = array(1, 6, 3, 4, 5);
 rsort($a, SORT_DESC);
-foreach ($a as $b) {
+    foreach ($a as $b) {
 echo "$b";
-}
-10.
-SORT_NUMERIC
-Treats array elements as numeric values when sorting.
-$a = array("1", "4", "2", "9");
+    }
+10. SORT_NUMERIC
+    Treats array elements as numeric values when sorting.
+    $a = array("1", "4", "2", "9");
 sort($a, SORT_NUMERIC);
-foreach ($a as $b) {
+    foreach ($a as $b) {
 echo "$b";
-}
-11.
-SORT_REGULAR
-Compares elements in their original data types (strings, integers, etc.).
-$a = array("1", "4", "2", "9", 3);
+    }
+11. SORT_REGULAR
+    Compares elements in their original data types (strings, integers, etc.).
+    $a = array("1", "4", "2", "9", 3);
 sort($a, SORT_NUMERIC);
-foreach ($a as $b) {
+    foreach ($a as $b) {
 echo "$b";
-}
-12.
-CASE_LOWER
-Converts array keys to lowercase.
-$fruits = array("Apple" => "Red", "Banana" => "yellow");
+    }
+12. CASE_LOWER
+    Converts array keys to lowercase.
+    $fruits = array("Apple" => "Red", "Banana" => "yellow");
 $lowercaseKeys = array_change_key_case($fruits, CASE_LOWER);
 foreach ($lowercaseKeys as $key => $value) {
-echo "Key: " . $key . ", Value: " . $value;
-}
-13.
-CASE_UPPER
-Converts array keys to uppercase
+    echo "Key: " . $key . ", Value: " . $value;
+    }
+13. CASE_UPPER
+    Converts array keys to uppercase
 
 $fruits = array("Apple" => "Red", "Banana" => "yellow");
 $upperCaseKeys = array_change_key_case($fruits, CASE_UPPER);
 foreach ($upperCaseKeys as $key => $value) {
 echo "Key: " . $key . ", Value: " . $value;
 }
+
+WordPress Progress Update:
+
+Learned Basics of WordPress:
+
+Gained understanding of how to use the WordPress dashboard, manage posts/pages, and install themes/plugins.
+
+Astra Theme Download:
+
+Installed the Astra theme for building a fast, customizable website with pre-built templates.
+
+WooCommerce Plugin Setup:
+
+Installed WooCommerce for adding e-commerce functionality but faced issues with payments not working properly.
+
+Editing with Block Editor & Elementor:
+
+Used the Block Editor  for basic content and Elementor for advanced page design with drag-and-drop features
+ have to make a project to clearly understand .
+
+#HappyNewYear!!
