@@ -199,7 +199,7 @@ WordPress Progress Update:
 Learned Basics of WordPress:
 
 Gained understanding of how to use the WordPress dashboard, manage posts/pages, and install themes/plugins.
-
+Themes downloaded
 Astra Theme Download:
 
 Installed the Astra theme for building a fast, customizable website with pre-built templates.
