@@ -251,14 +251,14 @@ echo "<br>";
 
 //array_fill() creates an array with a specified number of elements, each having the same value.
 
-$filledArray = array_fill(0, 5, "Bishal");
+$filledArray = array_fill(0, 4, "Bishal");
 echo "Filled Array :";
 foreach ($filledArray as $fa) {
     echo $fa . '';
 }
 echo "<br>";
 // output
-//Filled Array :BishalBishalBishalBishalBishal
+//Filled Array :BishalBishalBishalBishal
 
 
 //array_fill_keys() creates an array using specified keys and the same value for each key.
@@ -277,7 +277,7 @@ echo "<br>";
 //Filled Array with Keys: [a => hello] [b => hello] [c => hello]
 
 //array_flip() flips the keys and values of an array, creating a new array where the original values become keys, and the original keys become values.
-$fruits = array("apple", "banana", "cheery");
+$fruits = array("apple", "banana", "cheery", "date");
 $filledArray = array_flip($fruits);
 echo "Flipped array:";
 foreach ($filledArray as $key => $value) {
@@ -285,7 +285,7 @@ foreach ($filledArray as $key => $value) {
 }
 echo "<br>";
 //output
-//Flipped array:[apple=>0][banana=>1][cheery=>2]
+//Flipped array:[apple=>0][banana=>1][cheery=>2][date=>3]
 
 
 //array_slice() extracts a portion of an array based on a starting index and length, creating a new array containing the selected elements.
