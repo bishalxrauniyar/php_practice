@@ -1,23 +1,23 @@
 <?php
-// echo "Hello World! Bishal Rauniyar <br>";
-// $name = "Bishal Rauniyar";
-// $age = 21;
-// $gpa = 3.5;
-// $isMale = true;
-// $food = "pizza";
-// $quantity = 2;
-// $price = 30.5;
-// $total = $quantity * $price;
+echo "Hello World! Bishal Rauniyar <br>";
+$name = "Bishal Rauniyar";
+$age = 21;
+$gpa = 3.5;
+$isMale = true;
+$food = "pizza";
+$quantity = 2;
+$price = 30.5;
+$total = $quantity * $price;
 // cookies
 
 // The $_COOKIE superglobal in PHP is an associative array that contains all the cookies sent by the browser to the server. The keys of the array are the cookie names, and the values are the cookie values.
-// setcookie("name", "Bishal Rauniyar", time() + 86400);
-// setcookie("age", 21, time() + 86400);
-// setcookie("gpa", 3.5, time() + 86400);
+setcookie("name", "Bishal Rauniyar", time() + 86400);
+setcookie("age", 21, time() + 86400);
+setcookie("gpa", 3.5, time() + 86400);
 
-// foreach ($_COOKIE as $key => $value) {
-//     echo "{$key}={$value} <br>";
-// }
+foreach ($_COOKIE as $key => $value) {
+    echo "{$key}={$value} <br>";
+}
 ?>
 
 <!DOCTYPE html>
