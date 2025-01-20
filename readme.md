@@ -212,5 +212,3 @@ Editing with Block Editor & Elementor:
 
 Used the Block Editor  for basic content and Elementor for advanced page design with drag-and-drop features
  have to make a project to clearly understand .
-
-#HappyNewYear!!

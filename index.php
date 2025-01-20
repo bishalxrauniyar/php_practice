@@ -9,6 +9,8 @@
 // $price = 30.5;
 // $total = $quantity * $price;
 // cookies
+
+// The $_COOKIE superglobal in PHP is an associative array that contains all the cookies sent by the browser to the server. The keys of the array are the cookie names, and the values are the cookie values.
 // setcookie("name", "Bishal Rauniyar", time() + 86400);
 // setcookie("age", 21, time() + 86400);
 // setcookie("gpa", 3.5, time() + 86400);
@@ -31,7 +33,7 @@
 
     <!-- <h2>hello <?php echo $name ?></h2>
     <p><?php echo "$name has ordered $quantity $food online <br>"; ?></p>
-    <p><?php echo "your total is RS {$quantity}*{$price}={$total}"; ?></p> -->
+    <p><?php echo "your total is RS {$quantity}*{$price}={$total}"; ?></p>  this is a string template our total is RS {$quantity}*{$price} -->
     <!-- sign up form -->
 
     <!-- POST METHOD -->
@@ -73,6 +75,20 @@
     </form> -->
     <!-- isset() and empty () -->
 
+    <!-- $username = ""; // Empty string
+if (isset($username)) { // Checks if $username is defined and not null
+    echo "Username is set"; 
+
+} else {
+    echo "Username is not set";
+}
+if (empty($username)) { // Checks if $username is considered empty
+    echo "Username is empty"; 
+} else {
+    echo "Username is not empty";
+}  -->
+
+
 
     <!-- <h2> Login form </h2>
     <form action="index.php" method="post">
@@ -111,10 +127,10 @@
 // echo "The volume of the circle is $volume";
 // 
 // Magic Constants
-// echo __DIR__;
-// echo "<br>";
-// echo __FILE__;
-// echo "<br>";
+echo __DIR__;
+echo "<br>";
+echo __FILE__;
+echo "<br>";
 // echo __LINE__;
 // echo "<br>";
 // echo __FUNCTION__;
@@ -181,8 +197,8 @@ foreach ($combined as $key => $value) {
 // [c=>cherry]
 
 
-//array_chunk
-$numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+//array_chunk (oddnumber of elements CHECK) 
+$numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
 $chunked = array_chunk($numbers, 2);
 echo "Chunked Array: <br>";
 foreach ($chunked as $chunk) {
@@ -194,10 +210,10 @@ foreach ($chunked as $chunk) {
 // [3,4]
 // [5,6]
 // [7,8]
-// [9,10]
+// [9]
 
 
-//compact() function
+//compact() function usecase
 
 $name = "Bishal";
 $age = 21;
@@ -210,7 +226,7 @@ foreach ($info as $key => $value) {
 //[name=>Bishal][age=>21]
 
 
-// range() generates an array containing a start and an end value, with optional step increments.
+// range() generates an array containing a start and an end value, with optional step increments inslusive in nature.
 
 $even_numbers = range(2, 10, 2);
 echo " <br> Even numbers : <br>";
@@ -221,15 +237,16 @@ echo "<br>";
 
 
 //"list() function"
-$info = array("Bishal", "Rauniyar", 21);
-list($firstname, $lastname, $age) = $info;
+$info = array("Bishal", "Rauniyar", 21, "Kalimati");
+list($firstname, $lastname, $age, $location) = $info;
 echo "Firstname: $firstname \n";
 echo "Lastname:$lastname \n";
 echo "Age:$age \n";
+echo "Location:$location \n";
 echo "<br>";
 
 // output
-//Firstname: Bishal Lastname:Rauniyar Age:21
+//Firstname: Bishal Lastname: Rauniyar Age:21
 
 
 //array_fill() creates an array with a specified number of elements, each having the same value.
@@ -1081,3 +1098,16 @@ echo "<br>";
 
 
 //completed the practice of php here
+
+
+$capitals = array(
+    "Nepal" => "Kathmandu",
+    "Nepal" => "New Delhi",
+    "China" => "Beijing",
+    "USA" => "Washington D.C.",
+    "UK" => "London"
+);
+foreach ($capitals as $country => $capital) {
+    echo "The capital of $country is $capital";
+    echo "<br>";
+}
