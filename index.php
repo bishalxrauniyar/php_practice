@@ -1196,5 +1196,5 @@ function get_city_name()
     return 'Kansas City';
 }
 
-// Output the city name
+// Output the city nam
 echo get_city_name();
