@@ -1,42 +1,43 @@
 <select name="form_fields[field_69e522c]" id="form-field-field_69e522c" class="elementor-field-textual elementor-size-sm" data-gtm-form-interact-field-id="0">
-									<option value="Select">Select</option>
-									<option value="Missouri Counties">Missouri Counties</option>
-									<option value="Cass">Cass</option>
-									<option value="Clay">Clay</option>
-									<option value="Jackson">Jackson</option>
-									<option value="Lafayette">Lafayette</option>
-									<option value="Platte">Platte</option>
-									<option value="Ray">Ray</option>
-									<option value="Kansas Counties">Kansas Counties</option>
-									<option value="Douglas">Douglas</option>
-									<option value="Franklin">Franklin</option>
-									<option value="Johnson">Johnson</option>
-									<option value="Leavenworth">Leavenworth</option>
-									<option value="Linn">Linn</option>
-									<option value="Miami">Miami</option>
-									<option value="Wyandotte">Wyandotte</option>
-									<option value="Key Cities">Key Cities</option>
-									<option value="Overland Park">Overland Park</option>
-									<option value="Olathe">Olathe</option>
-									<option value="Independence">Independence</option>
-									<option value="Lee’s Summit">Lee’s Summit</option>
-									<option value="Blue Springs">Blue Springs</option>
-									<option value="Liberty">Liberty</option>
-									<option value="Shawnee">Shawnee</option>
-									<option value="Lenexa">Lenexa</option>
-									<option value="Leavenworth">Leavenworth</option>
-									<option value="Lawrence">Lawrence</option>
-									<option value="Smithville">Smithville</option>
-							</select>
+    <option value="Select">Select</option>
+    <option value="Missouri Counties">Missouri Counties</option>
+    <option value="Cass">Cass</option>
+    <option value="Clay">Clay</option>
+    <option value="Jackson">Jackson</option>
+    <option value="Lafayette">Lafayette</option>
+    <option value="Platte">Platte</option>
+    <option value="Ray">Ray</option>
+    <option value="Kansas Counties">Kansas Counties</option>
+    <option value="Douglas">Douglas</option>
+    <option value="Franklin">Franklin</option>
+    <option value="Johnson">Johnson</option>
+    <option value="Leavenworth">Leavenworth</option>
+    <option value="Linn">Linn</option>
+    <option value="Miami">Miami</option>
+    <option value="Wyandotte">Wyandotte</option>
+    <option value="Key Cities">Key Cities</option>
+    <option value="Overland Park">Overland Park</option>
+    <option value="Olathe">Olathe</option>
+    <option value="Independence">Independence</option>
+    <option value="Lee’s Summit">Lee’s Summit</option>
+    <option value="Blue Springs">Blue Springs</option>
+    <option value="Liberty">Liberty</option>
+    <option value="Shawnee">Shawnee</option>
+    <option value="Lenexa">Lenexa</option>
+    <option value="Leavenworth">Leavenworth</option>
+    <option value="Lawrence">Lawrence</option>
+    <option value="Smithville">Smithville</option>
+</select>
 
 
 
 
 
+<?php
 
 
-
-function show_custom_location_by_ip() {
+function show_custom_location_by_ip()
+{
     if (!session_id()) {
         session_start();
     }
@@ -98,7 +99,8 @@ add_shortcode('city_name', 'show_custom_location_by_ip');
 
 // Add the settings page to the admin menu
 // Add the settings page to the admin menu
-function custom_contact_settings_menu() {
+function custom_contact_settings_menu()
+{
     add_menu_page(
         'Contact Settings',
         'Contact Settings',
@@ -112,7 +114,8 @@ function custom_contact_settings_menu() {
 add_action('admin_menu', 'custom_contact_settings_menu');
 
 // Register settings
-function custom_contact_settings_init() {
+function custom_contact_settings_init()
+{
     register_setting('custom_contact_settings_group', 'custom_contact_settings', [
         'sanitize_callback' => 'custom_contact_settings_sanitize',
         'default' => [
@@ -124,9 +127,10 @@ function custom_contact_settings_init() {
 add_action('admin_init', 'custom_contact_settings_init');
 
 // Sanitize input data
-function custom_contact_settings_sanitize($input) {
+function custom_contact_settings_sanitize($input)
+{
     $sanitized = [];
-    
+
     // Sanitize locations
     $sanitized['locations'] = [];
     if (isset($input['locations']) && is_array($input['locations'])) {
@@ -141,23 +145,24 @@ function custom_contact_settings_sanitize($input) {
             }
         }
     }
-    
+
     // Sanitize default location
     $location_names = array_column($sanitized['locations'], 'name');
     $sanitized['default_location'] = isset($input['default_location']) && in_array($input['default_location'], $location_names)
         ? sanitize_text_field($input['default_location'])
         : (!empty($location_names) ? $location_names[0] : '');
-    
+
     return $sanitized;
 }
 
 // Render the settings page
-function custom_contact_settings_page() {
+function custom_contact_settings_page()
+{
     $options = get_option('custom_contact_settings', [
         'locations' => [],
         'default_location' => ''
     ]);
-    ?>
+?>
     <div class="wrap">
         <h1>Contact Settings</h1>
         <form method="post" action="options.php">
@@ -166,7 +171,7 @@ function custom_contact_settings_page() {
             do_settings_sections('custom_contact_settings_group');
             ?>
             <table class="form-table">
-				
+
                 <!-- Locations -->
                 <tr>
                     <th scope="row"><label>Locations</label></th>
@@ -175,7 +180,7 @@ function custom_contact_settings_page() {
                             <?php
                             if (!empty($options['locations'])) {
                                 foreach ($options['locations'] as $index => $location) {
-                                    ?>
+                            ?>
                                     <div class="location-field" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ddd;">
                                         <p>
                                             <label><strong>Location Name</strong></label><br>
@@ -191,17 +196,17 @@ function custom_contact_settings_page() {
                                         </p>
                                         <button type="button" class="button remove-location">Remove Location</button>
                                     </div>
-                                    <?php
+                            <?php
                                 }
                             }
                             ?>
-							
+
                         </div>
-						<button type="button" id="add-location" class="button">Add Location</button>
-                        
+                        <button type="button" id="add-location" class="button">Add Location</button>
+
                     </td>
                 </tr>
-                
+
                 <!-- Default Location -->
                 <tr>
                     <th scope="row"><label for="default_location">Default Location</label></th>
@@ -217,7 +222,7 @@ function custom_contact_settings_page() {
                         </select>
                     </td>
                 </tr>
-				
+
             </table>
             <?php submit_button(); ?>
         </form>
@@ -226,7 +231,7 @@ function custom_contact_settings_page() {
     <script>
         jQuery(document).ready(function($) {
             let locationIndex = <?php echo count($options['locations']); ?>;
-            
+
             // Add new location field
             $('#add-location').on('click', function() {
                 const newField = '<div class="location-field" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ddd;">' +
@@ -284,25 +289,31 @@ function custom_contact_settings_page() {
         .location-field {
             background: #f9f9f9;
         }
+
         .location-field p {
             margin: 0 0 10px 0;
         }
+
         .location-field .button {
             margin-top: 5px;
         }
-		#locations-container{
-			display: flex;
-			flex-wrap: wrap;
-				gap: 30px;
-		}
-		#locations-container #add-location{
-			width: 30%;
-    padding: 8px 10px;
-		}
-		#locations-container button, #add-location{
-			background-color: #006C79;
-			color: #fff;
-		}
+
+        #locations-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        #locations-container #add-location {
+            width: 30%;
+            padding: 8px 10px;
+        }
+
+        #locations-container button,
+        #add-location {
+            background-color: #006C79;
+            color: #fff;
+        }
     </style>
-    <?php
+<?php
 }
