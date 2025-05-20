@@ -1156,3 +1156,47 @@ foreach ($capitals as $country => $capital) {
 // echo "<br>";
 // echo "<br>";
 // echo "<br>";
+
+
+function getClientIP()
+{
+    $ip_sources = ['HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'REMOTE_ADDR'];
+    foreach ($ip_sources as $source) {
+        if (!empty($_SERVER[$source])) {
+            $ip = $_SERVER[$source];
+            if (strpos($ip, ',') !== false) {
+                $ip = trim(explode(',', $ip)[0]);
+            }
+            if ($ip != '127.0.0.1' && $ip != '::1') {
+                return $ip;
+            }
+        }
+    }
+    $context = stream_context_create(['http' => ['timeout' => 5]]);
+    $externalIP = @file_get_contents('https://api.ipify.org', false, $context);
+    return $externalIP !== false ? trim($externalIP) : 'Kansas City';
+}
+
+function get_city_name()
+{
+    $client_ip = getClientIP();
+    if ($client_ip === 'Kansas City') {
+        return 'Kansas City';
+    }
+
+    $apiKey = '3b525eaaafd6f889e2476e21b1350959';
+    $apiUrl = "http://api.ipstack.com/{$client_ip}?access_key={$apiKey}";
+    $args = ['timeout' => 5, 'httpversion' => '1.1'];
+    $response = wp_remote_get($apiUrl, $args);
+
+    if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+        $data = json_decode(wp_remote_retrieve_body($response), true);
+        return isset($data['city']) && !empty($data['city']) ? $data['city'] : 'Kansas City';
+    }
+    return 'Kansas City';
+}
+
+// Output the city name
+echo get_city_name();
+
+asd
