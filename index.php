@@ -1110,4 +1110,49 @@ $capitals = array(
 foreach ($capitals as $country => $capital) {
     echo "The capital of $country is $capital";
     echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
 }
+
+
+
+// function getClientIP()
+// {
+//     // Check for shared internet/ISP IP
+//     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+//         return $_SERVER['HTTP_CLIENT_IP'];
+//     }
+
+//     // Check for IPs passing through proxies
+//     if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+//         // HTTP_X_FORWARDED_FOR can contain multiple IPs separated by comma
+//         // The first one is the client's original IP
+//         $ipList = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+//         return trim($ipList[0]);
+//     }
+
+//     // If neither found, use REMOTE_ADDR
+//     if (!empty($_SERVER['REMOTE_ADDR'])) {
+//         return $_SERVER['REMOTE_ADDR'];
+//     }
+
+//     // If all else fails
+//     return 'Unknown';
+// }
+
+// // Example usage
+// $clientIP = getClientIP();
+// echo "Client IP Address: " . $clientIP;
+
+
+// echo "<br>";
+// $ipaddress = getenv("REMOTE_ADDR");
+// echo "Your IP Address is " . $ipaddress;
+
+
+
+// echo "<br>";
+// echo "<br>";
+// echo "<br>";
